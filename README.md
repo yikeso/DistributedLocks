@@ -13,7 +13,7 @@ lockFactory.setDataSource(dataSource);
 
 lockFactory.setExpireTime(5);
 
-lockFactory.setPrefix("SFT_");
+lockFactory.setPrefix("LOCK_");
 
 AbstractDbDistributedLockTemple lock = lockFactory.buildDbDistributedLock();
 
