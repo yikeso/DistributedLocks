@@ -1,6 +1,6 @@
 # DistributedLocks
 基于db的分布式锁，实现，只支持Oracle和mysql
-
+\n\n
 
 
 
@@ -21,6 +21,7 @@ AbstractDbDistributedLockTemple lock = lockFactory.buildDbDistributedLock();
 lock.tryLock(namespace,lockid);
 
 lock.isLocked(namespace,lockid);
+
 lock.updateLock(namespace,lockid);
 
 lock.isLocked(namespace,lockid);
