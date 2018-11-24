@@ -13,3 +13,14 @@ lockFactory.setExpireTime(5);
 lockFactory.setPrefix("SFT_");
 
 AbstractDbDistributedLockTemple lock = lockFactory.buildDbDistributedLock();
+
+
+
+.......
+
+lock.tryLock(namespace,lockid);
+
+lock.isLocked(namespace,lockid);
+lock.updateLock(namespace,lockid);
+
+lock.isLocked(namespace,lockid);
