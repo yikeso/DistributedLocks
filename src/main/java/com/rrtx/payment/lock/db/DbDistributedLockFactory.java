@@ -1,5 +1,6 @@
 package com.rrtx.payment.lock.db;
 
+import com.rrtx.payment.lock.ex.LockException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,11 +50,11 @@ public class DbDistributedLockFactory {
             }else if(driverName.indexOf("oracle") > -1){
                 distributedLockTemple = OracleDistributedLock.newInstance(this.expireTime,this.unit,this.dataSource,this.prefix);
             }else {
-                throw new RuntimeException("暂不支持的数据库类型");
+                throw new LockException("暂不支持的数据库类型");
             }
             return distributedLockTemple;
         } catch (SQLException e) {
-            throw new RuntimeException("获取数据库类型失败",e);
+            throw new LockException("初始化锁失败",e);
         }finally {
             if(null != connection){
                 try {
